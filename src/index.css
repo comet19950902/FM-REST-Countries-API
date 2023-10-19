@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,600;6..12,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-image: url(../src/assets/desktop-design-home-light.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    opacity: 50%;
+}
