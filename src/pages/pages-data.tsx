@@ -1,5 +1,5 @@
 import { routerType } from "../utilities";
-import Home from "./home";
+import Home from "./Home";
 
 const pagesData: routerType[] = [{ path: "", element: <Home />, title: "" }];
 

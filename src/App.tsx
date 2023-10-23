@@ -2,7 +2,7 @@ import { BrowserRouter } from "react-router-dom";
 import { styled } from "styled-components";
 
 import { Footer, Header } from "@features/ui";
-import Router from "pages/router";
+import Router from "pages/Router";
 
 export const H1 = styled.h1`
   font-size: 24px;
