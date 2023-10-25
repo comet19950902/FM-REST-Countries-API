@@ -15,6 +15,7 @@ const BodyContainer = styled.div`
   max-width: 1440px;
   width: 100%;
   padding: 48px 80px;
+  gap: 46px;
 `;
 
 function Router() {

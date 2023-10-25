@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 
 import { SearchBar, SelectBar } from "@features/search";
+import { CountryList } from "@features/countries/Country-Lists";
 
 const Head = styled.div`
   position: relative;
@@ -17,6 +18,7 @@ export default function Home() {
         <SearchBar />
         <SelectBar />
       </Head>
+      <CountryList />
     </>
   );
 }

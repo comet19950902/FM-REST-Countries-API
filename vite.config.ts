@@ -16,7 +16,7 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: vitestConfig.test,
   server: {
-    port: 3000,
+    port: 3100,
     host: "0.0.0.0",
   },
   resolve: {
