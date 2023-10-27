@@ -1,7 +1,7 @@
 import { RiMoonLine } from "react-icons/ri";
-
-import { H1, H3 } from "App";
 import { styled } from "styled-components";
+
+import { H1, H3 } from "@features/resources/font";
 
 const Head = styled.div`
   background-color: #fafafa;

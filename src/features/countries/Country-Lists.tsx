@@ -8,7 +8,7 @@ const CountryBord = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 74px;
 `;
 
 export function CountryList() {
@@ -16,7 +16,7 @@ export function CountryList() {
 
   useEffect(() => {
     const getCountryList = async () => {
-      const lists = await axios.get(import.meta.env.VITE_URL);
+      const lists = await axios.get(`${import.meta.env.VITE_URL}/all`);
       setLists(lists.data);
     };
 

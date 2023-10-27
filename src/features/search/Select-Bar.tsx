@@ -48,6 +48,7 @@ const DownMenu = styled.div<DownMenuProps>`
   transition-property: max-height, padding;
   max-height: ${(props) => (props.open ? "100vh" : "0")};
   padding: ${(props) => (props.open ? "12px 0" : "0")};
+  background-color: white;
 
   span {
     padding: 3px 124px 3px 24px;
