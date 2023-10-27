@@ -33,6 +33,7 @@ export interface countryType {
   region: string;
   subregion: string;
   timezones: Array<string>;
+  population: number;
 }
 
 export const retionList = [
