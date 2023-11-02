@@ -9,7 +9,7 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: 0 0 3px 0 #00000040;
   overflow: hidden;
-  background: white;
+  background: ${({ theme }) => theme.background};
 `;
 
 const FlagCard = styled.img`

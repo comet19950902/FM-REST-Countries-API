@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { styled } from "styled-components";
 import { BiChevronDown } from "react-icons/bi";
+import axios from "axios";
+
 import { retionList } from "utilities";
+import { CountryContext } from "@features/countries/CountiresContextProvider";
 
 interface DownMenuProps {
   open?: boolean;
@@ -48,7 +51,7 @@ const DownMenu = styled.div<DownMenuProps>`
   transition-property: max-height, padding;
   max-height: ${(props) => (props.open ? "100vh" : "0")};
   padding: ${(props) => (props.open ? "12px 0" : "0")};
-  background-color: white;
+  background-color: ${({ theme }) => theme.background};
 
   span {
     padding: 3px 124px 3px 24px;
@@ -65,11 +68,25 @@ const DownMenu = styled.div<DownMenuProps>`
 export function SelectBar() {
   const [region, setRegion] = useState<string>("Filter by Region");
   const [openDown, setOpenDown] = useState<boolean>(false);
+  const { setCountires } = useContext(CountryContext);
 
   const setRegionHandler = (id: string) => {
     setRegion(id);
     setOpenDown(false);
   };
+
+  useEffect(() => {
+    const getCountryList = async () => {
+      let id = "all";
+      if (region !== "Filter by Region") {
+        id = "region/" + region;
+      }
+      const lists = await axios.get(`${import.meta.env.VITE_URL}/${id}`);
+      setCountires(lists.data);
+    };
+
+    getCountryList();
+  }, [region]);
 
   return (
     <>

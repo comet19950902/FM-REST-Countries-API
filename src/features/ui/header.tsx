@@ -1,10 +1,12 @@
 import { RiMoonLine } from "react-icons/ri";
 import { styled } from "styled-components";
+import { useContext, useEffect } from "react";
 
 import { H1, H3 } from "@features/resources/font";
+import { ThemeContext } from "./ThemeContextProvider";
 
 const Head = styled.div`
-  background-color: #fafafa;
+  background-color: ${({ theme }) => theme.background};
   display: flex;
   justify-content: center;
   box-shadow: 0 5px 4px -3px rgb(0 0 24);
@@ -31,11 +33,17 @@ const MoneIcon = styled(RiMoonLine)`
 `;
 
 export function Header() {
+  const { themeStyle, setThemeStyle } = useContext(ThemeContext);
+
+  useEffect(() => {
+    console.log("w3423423423423424", themeStyle);
+  }, [themeStyle]);
+
   return (
     <Head>
       <HeadContent>
         <H1>Where in the world?</H1>
-        <ModeSet>
+        <ModeSet onClick={() => setThemeStyle(!themeStyle)}>
           <MoneIcon />
           <H3>Dark Mode</H3>
         </ModeSet>
