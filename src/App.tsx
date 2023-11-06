@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import Router from "pages/Router";
 import { Footer, Header } from "@features/ui";
@@ -10,10 +10,6 @@ import { GlobalStyles } from "@features/styles/globalStyles";
 
 function App() {
   const { themeStyle } = useContext(ThemeContext);
-
-  useEffect(() => {
-    console.log("themeStyle", themeStyle);
-  }, [themeStyle]);
 
   return (
     <ThemeProvider theme={themeStyle ? darkTheme : lightTheme}>

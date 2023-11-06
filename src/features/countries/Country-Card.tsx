@@ -38,7 +38,7 @@ export function CountryCard({ data }: { data: countryType }) {
   const navigate = useNavigate();
 
   const setURL = () => {
-    navigate(`/:${data.name.common}`);
+    navigate(`/FM-REST-Countries-API/:${data.name.common}`);
   };
 
   return (

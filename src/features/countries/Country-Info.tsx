@@ -85,7 +85,6 @@ export const CountryInfo = ({ name }: { name: string }) => {
     if (!name) return;
     const getCountryInfo = async () => {
       const data = await axios.get(`${import.meta.env.VITE_URL}/name/${name}`);
-      console.log("data", data.data[0]);
       const list = Object.keys(data.data[0].name.nativeName);
       if (data.data[0].currencies) {
         const currencieList = Object.keys(data.data[0].currencies);
@@ -102,7 +101,7 @@ export const CountryInfo = ({ name }: { name: string }) => {
 
   return (
     <Main>
-      <BackButton onClick={() => navigate("/")}>
+      <BackButton onClick={() => navigate("/FM-REST-Countries-API")}>
         <FiArrowLeft />
         <H5>Back</H5>
       </BackButton>
