@@ -1,7 +1,8 @@
 import { styled } from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 import { countryType } from "utilities";
-import { H2, H4 } from "@features/resources/font";
+import { H3, H5 } from "@features/resources/font";
 
 const Card = styled.div`
   display: flex;
@@ -10,6 +11,7 @@ const Card = styled.div`
   box-shadow: 0 0 3px 0 #00000040;
   overflow: hidden;
   background: ${({ theme }) => theme.background};
+  cursor: pointer;
 `;
 
 const FlagCard = styled.img`
@@ -33,23 +35,31 @@ const Info = styled.div`
 `;
 
 export function CountryCard({ data }: { data: countryType }) {
+  const navigate = useNavigate();
+
+  const setURL = () => {
+    navigate(`/:${data.name.common}`);
+  };
+
   return (
-    <Card>
-      <FlagCard src={data.flags.svg} />
-      <CountryInfo>
-        <H2 extra>{data.name.common}</H2>
-        <Info>
-          <H4>
-            Population: <span>{data.population}</span>
-          </H4>
-          <H4>
-            Region: <span>{data.region}</span>
-          </H4>
-          <H4>
-            Capital: <span>{data.capital}</span>
-          </H4>
-        </Info>
-      </CountryInfo>
-    </Card>
+    <>
+      <Card onClick={setURL}>
+        <FlagCard src={data.flags.svg} />
+        <CountryInfo>
+          <H3 extra>{data.name.common}</H3>
+          <Info>
+            <H5>
+              Population: <span>{data.population}</span>
+            </H5>
+            <H5>
+              Region: <span>{data.region}</span>
+            </H5>
+            <H5>
+              Capital: <span>{data.capital}</span>
+            </H5>
+          </Info>
+        </CountryInfo>
+      </Card>
+    </>
   );
 }

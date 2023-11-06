@@ -12,6 +12,7 @@ interface DownMenuProps {
 
 const SelectRegion = styled.div`
   position: relative;
+  background-color: ${({ theme }) => theme.background};
 
   title {
     padding: 18px 48px 18px 24px;
