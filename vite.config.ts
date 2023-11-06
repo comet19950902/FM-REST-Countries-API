@@ -24,4 +24,5 @@ export default defineConfig({
       src: "/src",
     },
   },
+  base: "/FM-REST-Countries-API",
 });

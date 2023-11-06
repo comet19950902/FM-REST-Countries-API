@@ -1,6 +1,6 @@
 import { RiMoonLine } from "react-icons/ri";
 import { styled } from "styled-components";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { H2, H4 } from "@features/resources/font";
 import { ThemeContext } from "./ThemeContextProvider";
@@ -34,10 +34,6 @@ const MoneIcon = styled(RiMoonLine)`
 
 export function Header() {
   const { themeStyle, setThemeStyle } = useContext(ThemeContext);
-
-  useEffect(() => {
-    console.log("w3423423423423424", themeStyle);
-  }, [themeStyle]);
 
   return (
     <Head>
