@@ -19,6 +19,7 @@ export interface countryType {
   currencies: object;
   flags: {
     alt: string;
+    png: string;
     svg: string;
   };
   languages: object;
@@ -29,11 +30,13 @@ export interface countryType {
   name: {
     common: string;
     official: string;
+    nativeName: object;
   };
   region: string;
   subregion: string;
   timezones: Array<string>;
   population: number;
+  tld: Array<string>;
 }
 
 export const retionList = [

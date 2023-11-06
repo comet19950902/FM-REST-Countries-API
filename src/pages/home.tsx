@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 import { SearchBar, SelectBar } from "@features/search";
-import { CountryList } from "@features/countries/Country-Lists";
+import { CountryList } from "@features/countries";
 
 const Head = styled.div`
   position: relative;

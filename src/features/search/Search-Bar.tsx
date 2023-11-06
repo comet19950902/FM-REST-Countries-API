@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const SearchInput = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.background};
   border-radius: 4px;
   box-shadow: 0 0 4px 0 #00000050;
   display: flex;
@@ -13,6 +13,8 @@ const SearchInput = styled.div`
 `;
 
 const Input = styled.input`
+  background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.color}
   letter-spacing: 0.02rem;
   border: none;
   width: 100%;
@@ -25,6 +27,7 @@ const Input = styled.input`
 
 const SearchIcon = styled(AiOutlineSearch)`
   font-size: 24px;
+  color: ${({ theme }) => theme.text};
 `;
 
 export function SearchBar() {

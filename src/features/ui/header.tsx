@@ -2,7 +2,7 @@ import { RiMoonLine } from "react-icons/ri";
 import { styled } from "styled-components";
 import { useContext, useEffect } from "react";
 
-import { H1, H3 } from "@features/resources/font";
+import { H2, H4 } from "@features/resources/font";
 import { ThemeContext } from "./ThemeContextProvider";
 
 const Head = styled.div`
@@ -42,10 +42,10 @@ export function Header() {
   return (
     <Head>
       <HeadContent>
-        <H1>Where in the world?</H1>
+        <H2>Where in the world?</H2>
         <ModeSet onClick={() => setThemeStyle(!themeStyle)}>
           <MoneIcon />
-          <H3>Dark Mode</H3>
+          <H4>Dark Mode</H4>
         </ModeSet>
       </HeadContent>
     </Head>
